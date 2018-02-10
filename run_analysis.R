@@ -45,7 +45,7 @@ tidyData <- data %>% group_by(ID, Activity) %>% summarize_all(mean)
 
 ## Adding "Avg" at the end of variable names, writing result to tidy_data.csv
 colnames(tidyData)[-(1:2)] <- paste0(colnames(tidyData)[-(1:2)], "Avg")
-write.table(tidyData, "tidy_data.txt")
+write.table(tidyData, "tidy_data.txt", row.names = FALSE)
 
 ## Deleting process elements
 rm("actlabl", "subtestid", "test", "subtrainid", 
